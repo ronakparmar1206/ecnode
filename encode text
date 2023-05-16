@@ -1,0 +1,12 @@
+const encodetext=(plainText)=>{
+  
+    let encryptedText = '';
+  const keyLength = secretKey.length;
+  for (let i = 0; i < plainText.length; i++) {
+    const plainCharCode = plainText.charCodeAt(i);
+    const keyCharCode = secretKey.charCodeAt(i % keyLength);
+    const encryptedCharCode = plainCharCode ^ keyCharCode;
+    encryptedText += String.fromCharCode(encryptedCharCode);
+  }
+  return btoa(encryptedText);
+  }
